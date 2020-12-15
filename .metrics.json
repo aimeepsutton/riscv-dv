@@ -11,7 +11,7 @@
         "name": "rv32imc",
         "image": "ibex-dsim-toolchain:latest",
         "memory" : "1",  
-        "cmd": "python3 run.py --test riscv_arithmetic_basic_test --simulator dsim --output out --verbose --co",
+        "cmd": "python3 run.py --test riscv_arithmetic_basic_test --simulator dsim --output out --co",
         "wavesCmd": "python3 run.py --test riscv_arithmetic_basic_test --simulator dsim --output out --verbose --co"
       }]
     },
@@ -33,7 +33,18 @@
                   "metricsFile": "metrics.db",
                   "isPass": "Test passed",
                   "seed": "random"
-              }
+              },
+	      {
+	          "name": "riscv_b_ext_test",
+                  "build": "rv32imc",
+                  "iterations": 1,
+                  "cmd": "cd /mux-flow/results; python3 <rootDir>/run.py --test riscv_b_ext_test --seed <seed> --simulator dsim --iss ovpsim --target rv32imcb --out <rootDir>/out --verbose; <rootDir>/scripts/check-status $?; rm -fr <rootDir>/out/dsim",
+                  "wavesCmd": "python3 <rootDir>/run.py --test riscv_arithmetic_basic_test --seed <seed> --simulator dsim --iss ovpsim --target rv32imcb --out <rootDir>/out --verbose; <rootDir>/scripts/check-status $?; rm -rf out/dsim",
+                  "logFile": "simulation.log",
+                  "metricsFile": "metrics.db",
+                  "isPass": "Test passed",
+                  "seed": "random"
+	      }
           ]
       }
     },
