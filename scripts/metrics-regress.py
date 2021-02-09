@@ -103,7 +103,7 @@ print('\n')
 #    print('Code (block): ' + str(math.trunc(regressionData['lineCoverage']*100) /100))
 #print('\n')
 
-print('Full results at: https://chipsalliance.metrics.ca/' + args.projectId + \
+print('Full results at: https://nightly.metrics.ca/' + args.projectId + \
       '/results/regressionRuns/' + regressionRunId)
       
 ## Set the exit code to be used by github action
