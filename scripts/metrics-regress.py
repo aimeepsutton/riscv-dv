@@ -30,7 +30,7 @@ parser.add_argument('projectId',      help='The ID of the Metrics project')
 args = parser.parse_args()
 
 ## Server
-server =  'chipsalliance.metrics.ca:443'
+server =  'nightly.metrics.ca:443'
 
 ## API Endpoints
 postRegression = '/api/v1/projects/'+args.projectId+'/regressionRuns'
