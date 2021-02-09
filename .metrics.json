@@ -2,8 +2,8 @@
     "variables": {
         "DSIM" : "${DSIM_HOME}/bin/dsim",
         "DSIM_LIB_PATH" : "${DSIM_HOME}/uvm-1.2/src/dpi",
-        "RISCV_GCC" : "${RISCV_TOOLCHAIN}/bin/riscv-none-embed-gcc",
-        "RISCV_OBJCOPY" : "${RISCV_TOOLCHAIN}/bin/riscv-none-embed-objcopy",
+        "RISCV_GCC" : "${RISCV_TOOLCHAIN}/bin/riscv-unknown-elf-gcc",
+        "RISCV_OBJCOPY" : "${RISCV_TOOLCHAIN}/bin/riscv-unknown-elf-objcopy",
         "OVPSIM_PATH" : "/customer-tools/riscv-ovpsim/bin/Linux64"
     },
     "builds": {
