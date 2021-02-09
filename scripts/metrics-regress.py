@@ -39,7 +39,13 @@ getRegressionRunInfo = '/api/v1/projects/'+args.projectId+'/regressionRuns/'
 ## Start regression
 reqParams = {}
 reqParams['regressionName'] = args.regressionName
-reqParams['branch'] = str(os.environ['GITHUB_REF'])
+
+# Determine the git reference to pass to Metrics. For PRs, the reference
+# is of the format /refs/pull/<PR-number>/merge
+if str(os.environ['GITHUB_EVENT_NAME']) eq 'pull_request_target':
+    reqParams['branch'] = '/refs/pull/' + str(os.environ['PR_NUMBER']) + '/merge'
+else:
+    reqParams['branch'] = str(os.environ['GITHUB_REF'])
 params = json.dumps(reqParams)
 
 response, regressionData = make_http_request('POST', postRegression, params) 

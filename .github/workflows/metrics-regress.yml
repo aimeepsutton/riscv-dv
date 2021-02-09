@@ -22,5 +22,6 @@ jobs:
           METRICS_CI_TOKEN: ${{ secrets.METRICS_CI_TOKEN }}
           METRICS_REGRESSION_NAME: riscv-dv_regression
           METRICS_PROJECT_ID: ${{ secrets.METRICS_PROJECT_ID }}
+	  PR_NUMBER: ${{ github.event.pull_request.number }}
         shell: bash
 
