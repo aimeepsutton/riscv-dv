@@ -46,6 +46,7 @@ if str(os.environ['GITHUB_EVENT_NAME']) is 'pull_request_target':
     reqParams['branch'] = '/refs/pull/' + str(os.environ['PR_NUMBER']) + '/merge'
 else:
     reqParams['branch'] = str(os.environ['GITHUB_REF'])
+print('GITHUB_EVENT_NAME = ' + str(os.environ['GITHUB_EVENT_NAME']))
 params = json.dumps(reqParams)
 
 response, regressionData = make_http_request('POST', postRegression, params) 
