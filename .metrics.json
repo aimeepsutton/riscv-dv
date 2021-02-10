@@ -4,7 +4,7 @@
         "DSIM_LIB_PATH" : "${DSIM_HOME}/uvm-1.2/src/dpi",
         "RISCV_GCC" : "${RISCV_TOOLCHAIN}/bin/riscv32-unknown-elf-gcc",
         "RISCV_OBJCOPY" : "${RISCV_TOOLCHAIN}/bin/riscv32-unknown-elf-objcopy",
-        "OVPSIM_PATH" : "/customer-tools/riscv-ovpsim/bin/Linux64"
+        "OVPSIM_PATH" : "/customer-tools/riscv-ovpsim-plus/bin/Linux64"
     },
     "builds": {
       "list": [{
